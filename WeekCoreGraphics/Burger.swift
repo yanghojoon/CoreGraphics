@@ -19,20 +19,20 @@ class Burger: UIView { // ImageView로 그려지지 않음.
         let width = frame.width
         let height = frame.height
         let pattyStartPoint = CGPoint(x: width * 0.1,
-                                      y: height * 0.15)
+                                      y: height * 0.42)
         let pattyEndPoint = CGPoint(x: width * 0.9,
-                                    y: height * 0.15)
+                                    y: height * 0.42)
         
         drawTopBread(start: pattyStartPoint, end: pattyEndPoint)
         drawButtomBread()
         drawPatty()
         for iterateNumber in 0...3 {
-            var time = Double(iterateNumber) * 0.2
+            let time = Double(iterateNumber) * 0.2
             drawLettuce(per: time)
         }
         drawTomato()
         for time in 0...22 {
-            var interval = Double(time) * 0.035
+            let interval = Double(time) * 0.035
             drawCheese(per: interval)
         }
     }
@@ -41,8 +41,11 @@ class Burger: UIView { // ImageView로 그려지지 않음.
         let path = UIBezierPath()
         path.lineWidth = lineWidth
         path.move(to: start) // 시작점을 정함
-        path.addArc(withCenter: CGPoint(x: frame.width / 2, y: frame.height * 0.15), radius: 15, startAngle: 0, endAngle: .pi, clockwise: false)
         pattyColor.set()
+        path.addCurve(to: end,
+                      controlPoint1: CGPoint(x: frame.width * 0.15, y: frame.height * 0.2),
+                      controlPoint2: CGPoint(x: frame.width * 0.85, y: frame.height * 0.2))
+        path.close()
         path.stroke()
     }
     
@@ -88,7 +91,6 @@ class Burger: UIView { // ImageView로 그려지지 않음.
         UIColor.systemGreen.set()
         
         path.stroke()
-//        path.close()
     }
     
     func drawPatty() {

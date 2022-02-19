@@ -31,6 +31,10 @@ class Burger: UIView { // ImageView로 그려지지 않음.
             drawLettuce(per: time)
         }
         drawTomato()
+        for time in 0...22 {
+            var interval = Double(time) * 0.035
+            drawCheese(per: interval)
+        }
     }
     
     func drawTopBread(start: CGPoint, end: CGPoint) {
@@ -39,6 +43,18 @@ class Burger: UIView { // ImageView로 그려지지 않음.
         path.move(to: start) // 시작점을 정함
         path.addArc(withCenter: CGPoint(x: frame.width / 2, y: frame.height * 0.15), radius: 15, startAngle: 0, endAngle: .pi, clockwise: false)
         pattyColor.set()
+        path.stroke()
+    }
+    
+    func drawCheese(per: CGFloat) {
+        let startX = frame.width * (0.1 + per)
+        let endX = frame.width * (0.13 + per)
+        
+        let path = UIBezierPath()
+        path.lineWidth = 5
+        path.move(to: CGPoint(x: startX, y: frame.height * 0.45))
+        path.addLine(to: CGPoint(x: endX, y: frame.height * 0.5))
+        UIColor.systemOrange.set()
         path.stroke()
     }
     
@@ -70,7 +86,9 @@ class Burger: UIView { // ImageView로 그려지지 않음.
                       controlPoint1: CGPoint(x: controlPoint1X, y: frame.height * 0.61),
                       controlPoint2: CGPoint(x: controlPoint2X, y: frame.height * 0.55))
         UIColor.systemGreen.set()
+        
         path.stroke()
+//        path.close()
     }
     
     func drawPatty() {

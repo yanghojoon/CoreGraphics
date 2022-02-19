@@ -13,6 +13,7 @@
 		DE049F5327C0F8C400579EDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE049F5127C0F8C400579EDF /* Main.storyboard */; };
 		DE049F5527C0F8C500579EDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE049F5427C0F8C500579EDF /* Assets.xcassets */; };
 		DE049F5827C0F8C500579EDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE049F5627C0F8C500579EDF /* LaunchScreen.storyboard */; };
+		DE049F6027C0F93E00579EDF /* Burger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE049F5F27C0F93E00579EDF /* Burger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DE049F5427C0F8C500579EDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE049F5727C0F8C500579EDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE049F5927C0F8C500579EDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE049F5F27C0F93E00579EDF /* Burger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Burger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				DE049F4B27C0F8C400579EDF /* AppDelegate.swift */,
 				DE049F4D27C0F8C400579EDF /* SceneDelegate.swift */,
 				DE049F4F27C0F8C400579EDF /* ViewController.swift */,
+				DE049F5F27C0F93E00579EDF /* Burger.swift */,
 				DE049F5127C0F8C400579EDF /* Main.storyboard */,
 				DE049F5427C0F8C500579EDF /* Assets.xcassets */,
 				DE049F5627C0F8C500579EDF /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				DE049F5027C0F8C400579EDF /* ViewController.swift in Sources */,
 				DE049F4C27C0F8C400579EDF /* AppDelegate.swift in Sources */,
+				DE049F6027C0F93E00579EDF /* Burger.swift in Sources */,
 				DE049F4E27C0F8C400579EDF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

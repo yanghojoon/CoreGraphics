@@ -26,6 +26,11 @@ class Burger: UIView { // ImageView로 그려지지 않음.
         drawTopBread(start: pattyStartPoint, end: pattyEndPoint)
         drawButtomBread()
         drawPatty()
+        for iterateNumber in 0...3 {
+            var time = Double(iterateNumber) * 0.2
+            drawLettuce(per: time)
+        }
+        
     }
     
     func drawTopBread(start: CGPoint, end: CGPoint) {
@@ -37,12 +42,30 @@ class Burger: UIView { // ImageView로 그려지지 않음.
         path.stroke()
     }
     
+    func drawLettuce(per: CGFloat) {
+        let startLineX = frame.width * 0.1 + frame.width * per
+        let endLineX = frame.width * 0.3 + frame.width * per
+        let controlPoint1X = frame.width * 0.15 + frame.width * per
+        let controlPoint2X = frame.width * 0.25 + frame.width * per
+        
+        let path = UIBezierPath()
+        path.lineWidth = 15
+        path.lineCapStyle = .round
+        path.move(to: CGPoint(x: startLineX,
+                              y: frame.height * 0.58))
+        path.addCurve(to: CGPoint(x: endLineX, y: frame.height * 0.58),
+                      controlPoint1: CGPoint(x: controlPoint1X, y: frame.height * 0.61),
+                      controlPoint2: CGPoint(x: controlPoint2X, y: frame.height * 0.55))
+        UIColor.systemGreen.set()
+        path.stroke()
+    }
+    
     func drawPatty() {
         let path = UIBezierPath()
         path.lineWidth = 30
         path.lineCapStyle = .round
-        path.move(to: CGPoint(x: frame.width * 0.09, y: frame.height * 0.63))
-        path.addLine(to: CGPoint(x: frame.width * 0.91, y: frame.height * 0.63))
+        path.move(to: CGPoint(x: frame.width * 0.09, y: frame.height * 0.65))
+        path.addLine(to: CGPoint(x: frame.width * 0.91, y: frame.height * 0.65))
         path.stroke()
     }
     
